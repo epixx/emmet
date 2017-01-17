@@ -1,0 +1,54 @@
+
+@white: #f0f0f0;
+@green: #37c799;
+@orange: #fb6c07;
+@black: #434343;
+@grey: #efefef;
+
+@font: "PT Sans";
+
+@radius: 6px;
+
+@barheight: 50px;
+
+
+// Миксины
+
+
+.row{
+
+	&>div {
+		float: left;
+		box-sizing: border-box;
+		padding: 10px;
+
+	}
+
+	&:after{
+
+		content: "";
+		clear: both;
+		display: table;
+
+	}
+}
+
+.generate-columns(16);
+
+.generate-columns(@n, @i: 1) when (@i =< @n) {
+  .col-@{i} {
+    width: (@i * 100% / @n);
+  }
+  .generate-columns(@n, (@i + 1));
+}
+
+
+.preview{
+
+	box-sizing: border-box;
+	border: 1px solid #444;
+	padding: 15px;
+	background-color: #ddd;
+
+}
+

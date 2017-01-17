@@ -1,0 +1,32 @@
+
+
+// треугольничек на css
+
+.triangle(@color){
+
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 50px 0 50px 86.6px;
+	border-color: transparent transparent transparent @color;
+
+}
+
+// Декларируем анимацию
+
+
+.pulsar(@color){
+
+
+	@-webkit-keyframes pulse{
+
+		0% {background-color: @color - 20%;}
+
+		50% {background-color: @color+10%;}
+
+		100% {background-color: @color - 20%;}
+
+	}
+
+
+}

@@ -1,0 +1,32 @@
+
+
+.row{
+
+	&>div {
+	
+		float: left;
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+
+		padding: 10px;
+
+	}
+
+	&:after{
+
+		content: "";
+		clear: both;
+		display: table;
+
+	}
+}
+
+.generate-columns(16);
+
+.generate-columns(@n, @i: 1) when (@i =< @n) {
+  .col-@{i} {
+    width: (@i * 100% / @n);
+  }
+  .generate-columns(@n, (@i + 1));
+}

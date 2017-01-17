@@ -1,0 +1,192 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Тренажер по Emmet</title>
+	<link href="css/prism.css" rel="stylesheet" />
+	<link rel="stylesheet" href="css/style.css">
+
+	<script src="js/require.js"></script>
+
+	<script src="data/tasks.js"></script>
+
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
+
+	<script>
+
+
+
+	window.onload = function(){
+
+		console.log("ready");
+
+		require.config({
+
+			baseUrl: 'js',
+			jquery: 'jquery-2',
+			emmet: 'emmet-bla-bla',	
+			paths: {
+
+				emmet:"emmet",
+				prism:"prism",
+				htmlspecialchars: "htmlspecialchars",
+				functions: "functions",				
+
+			},		
+		    // Add this map config in addition to any baseUrl or
+		    // paths config you may already have in the project.
+		    map: {
+		      // '*' means all modules will get 'jquery-private'
+		      // for their 'jquery' dependency.
+		      '*': { 'jquery': 'jquery', },
+		     
+		    }
+		});
+
+		// and the 'jquery-private' module, in the
+		// jquery-private.js file:
+		
+		require(['jquery','emmet','prism','htmlspecialchars','functions'], function( $ ) {
+
+
+				if(typeof localStorage["level"]=="undefined"){ 
+
+					localStorage["level"]=1; start(1); 
+
+				}else{
+
+					start(localStorage["level"]);	console.log("Найден сейв на уровне " + localStorage["level"]); progress();
+
+				}
+
+
+				$("#task_check").on("click",function(e){   e.preventDefault(); checkit();  });
+
+
+				/* Заставляем проверку работать по tab и enter*/
+
+				$('#task-answer').keydown(function(e) {
+					var keyCode = e.keyCode || e.which; 
+
+					if (keyCode == 9 || keyCode == 13 ) { 
+					    e.preventDefault(); 
+					    checkit();
+					    
+					}
+				});
+
+				
+
+
+
+				$(".course-logo").on("click",function(e){ localStorage["level"]=1; start(1); });
+
+				$(".task_next").on("click",function(e){ e.preventDefault();  next(); });
+
+				$(document).keypress(function(e) {if(e.which == 13 && status==2) { e.preventDefault();  next(); } });
+
+				//$( "#task-answer" ).change(function() {  checkit(); });
+
+				console.log("все загружено");
+
+		});
+
+	}
+		
+	// var example = "404";
+
+	var status = "0";
+
+	</script>
+
+</head>
+<body>
+
+
+<div class="wrapper">
+
+<div class="progressbar"><div class="progress" id="progress"></div></div>
+	
+	<header>
+		
+		<div class="row">
+
+			<div class="col-4">
+				<img src="img/emmet-logo.png" alt="" class="course-logo">
+				<h1>Курс по Emmet</h1>
+			</div>
+
+			<div class="col-12">
+				
+				<div class="task-header">
+					
+					<h2 class="task-title" id="task-title">{Задание загружается}</h2>
+
+					<div class="task-nav">
+						
+						 
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</header>
+
+	<div class="main">
+
+		<div class="row">
+			
+			<div class="col-4">
+				<div  id="task-theory" class="box task-theory"> {Здесь будет теория}</div>
+			</div>
+
+			<div class="col-6">
+				<div class="box box-example">
+					<code class="language-markup" id="task-example">{Здесь будет образец}</code> 
+				</div>
+			</div>
+
+			<div class="col-6">
+				<div class="box box-result">
+					<code class="language-markup" id="task-result">{Здесь будет результат}</code> 
+
+					 
+				</div>
+			</div>
+
+		</div>
+		
+
+	</div>
+
+
+		<div class="action row">
+			
+			<div class="col-4">
+				<p class="explain">Введите emmet выражение и нажмите на кнопку проверить</p>			
+			</div>
+
+			<div class="col-12 switch">
+
+				<div class="switch">
+			 
+					<form action="" class="task-form">
+						
+						<textarea class="task-answer" id="task-answer" value="" placeholder="Начните печатать здесь..."/></textarea>
+
+						<button class="task-check pulse" id="task_check">Проверить</button>
+
+					</form>
+
+					<a href="#next" class="task_next"> Следующее задание</a>
+
+				</div>
+			</div>
+		</div>	 
+
+</div>
+
+</body>
+</html>
