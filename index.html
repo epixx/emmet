@@ -79,6 +79,7 @@
 
 
 				$(".course-logo").on("click",function(e){ localStorage["level"]=1; start(1); });
+				$("#task_reset").on("click",function(e){ localStorage["level"]=1; start(1); });
 
 				$(".task_next").on("click",function(e){ e.preventDefault();  next(); });
 
@@ -120,6 +121,8 @@
 				<div class="task-header">
 					
 					<h2 class="task-title" id="task-title">{Задание загружается}</h2>
+					
+					<button class="task-reset" id="task_reset">Начать с начала</button>
 
 					<div class="task-nav">
 						

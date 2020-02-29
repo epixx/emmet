@@ -445,4 +445,16 @@ padding: 22px 0 0 0;
 
 }
 
-
+.task-reset {
+  float: right;
+  background-color: #eb604b;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: normal;
+  display: inline-block;
+  padding: 9px 18px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
