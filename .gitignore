@@ -1,0 +1,24 @@
+*.DS_Store
+vendor
+node_modules
+www/bitrix
+www/upload
+*.idea
+*.sublime-project
+*.sublime-workspace
+composer.lock
+env.lock
+
+node_modules
+deploy.json
+dist
+app/bower_components
+_design
+/bower_components
+/build
+# Created by .ignore support plugin (hsz.mobi)
+### OSX template
+.DS_Store
+.AppleDouble
+.LSOverride
+package-lock.json
