@@ -5,7 +5,7 @@
 	function reprism(selector,value){
 
 		$(selector).html(htmlSpecialChars(value));
-		 
+
 		Prism.highlightAll();
 
 		console.log("Призмы перезагружены");
@@ -35,10 +35,10 @@
 
 			reprism("#task-result",candidate);
 
-			if((candidate.toLowerCase() == expand(example).toLowerCase()) || (example=="lorem") )  { 
+			if((candidate.toLowerCase() == expand(example).toLowerCase()) || (example=="lorem") )  {
 
 				completed();
-				
+
 
 			}else{
 
@@ -56,7 +56,7 @@
 
 		console.log("Завершен уровень "+localStorage["level"]+" из "+tasks['total']);
 
-				if(localStorage["level"]>=tasks['total']){ 
+				if(localStorage["level"]>=tasks['total']){
 
 					finish();
 
@@ -66,7 +66,7 @@
 
 				$(".box-result").addClass("border-success");
 
-				
+
 				$(".task_next").delay(1400).fadeIn(400);
 
 
@@ -79,7 +79,7 @@
 
 	function progress(){
 
-		 
+
 
 		var progress = localStorage["level"]/tasks['total']*100+"%";
 
@@ -91,8 +91,8 @@
 
 	function next(){
 
-		localStorage["level"]++; 
-		start(localStorage["level"]); 
+		localStorage["level"]++;
+		start(localStorage["level"]);
 
 	}
 
@@ -138,7 +138,7 @@
 
 		//$(".modal").show();
 
-		$(".modal .message").html("<img src='http://31.media.tumblr.com/tumblr_lbf7t6dfl01qzkrfxo1_500.jpg' alt='' /><p>Вы прошли все задания этого небольшого курса. </p><p>Если у вас есть идеи или предложения по его улучшению – <a href='http://vk.com/im?media=&sel=6881'>напишите нам прямо сейчас</a></p>");
+		$(".modal .message").html("<img src='http://31.media.tumblr.com/tumblr_lbf7t6dfl01qzkrfxo1_500.jpg' alt='' /><p>Вы прошли все задания этого небольшого курса. </p><p>Если у вас есть идеи или предложения по его улучшению – <a href='http://vk.com/im?media=&sel=13477773'>напишите нам прямо сейчас</a></p>");
 
 	}
 
