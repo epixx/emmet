@@ -138,7 +138,7 @@
 
 		//$(".modal").show();
 
-		$(".modal .message").html("<img src='http://31.media.tumblr.com/tumblr_lbf7t6dfl01qzkrfxo1_500.jpg' alt='' /><p>Вы прошли все задания этого небольшого курса. </p><p>Если у вас есть идеи или предложения по его улучшению – <a href='http://vk.com/im?media=&sel=13477773'>напишите нам прямо сейчас</a></p>");
+		$(".modal .message").html("<img src='http://31.media.tumblr.com/tumblr_lbf7t6dfl01qzkrfxo1_500.jpg' alt='' /><p>Вы прошли все задания этого небольшого курса. </p><p>Если у вас есть идеи или предложения по его улучшению – <a href='https://vk.com/im?media=&sel=713326665'>напишите нам прямо сейчас</a></p>");
 
 	}
 
